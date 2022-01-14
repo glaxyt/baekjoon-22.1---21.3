@@ -26,7 +26,6 @@ vertex, edge, v = list(map(int, input().split()))
 graph = []
 visited_dfs = [False] * (vertex+1) # visited가 안겹치게 2개 생성
 visited_bfs = [False] * (vertex+1)
-result = 0
 
 for i in range(vertex+1):        # bfs와 dfs에 이용할 graph생성
     graph.append([])
