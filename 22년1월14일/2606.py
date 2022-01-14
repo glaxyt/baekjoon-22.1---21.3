@@ -6,7 +6,7 @@ def dfs(graph, v, visited):
     global result         # result 글로벌 선언
     visited[v] = True
     result += 1           # 컴퓨터에 연결되어있다면, result에 추가
-    #현재 노드와 연결된 다른 노드를 재귀적으로 방문
+    # graph[v](인덱스 v값에 들어간 v와 연결된 정점들)을 꺼내어 방문시키기
     for i in graph[v]:
         if not visited[i]:
             dfs(graph, i, visited)
