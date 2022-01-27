@@ -9,7 +9,7 @@ while start <= end:
     mid = (start + end) // 2
     cnt = 0
     for tree in trees:
-        if tree >= mid:
+        if tree > mid:
             cnt += (tree - mid)
 
     if cnt >= M:
