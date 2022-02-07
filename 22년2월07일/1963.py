@@ -2,7 +2,7 @@
 # 숫자를 바꾸는 과정에서도 네자리숫자임을 유시해야하며 소수여야한다.
 from collections import deque
 
-# 1000 - 9999까지의 숫자들 중에서 소수인 것들을 뽑아내는중
+# 에라토스테네스의 체 알고리즘
 def prime(list):
     for i in range(2, 100):
         if list[i]:
@@ -14,6 +14,7 @@ def bfs(prime, start, end):
     queue = deque()
     queue.append(start)
     visited = [0] * 10000
+    visited[start] = 1
     while queue:
         x = queue.popleft()
         str_x = str(x)
@@ -25,7 +26,7 @@ def bfs(prime, start, end):
                 if prime[nx] == True and visited[nx] == 0 and nx >= 1000:
                     visited[nx] = visited[x] + 1
                     queue.append(nx)
-    print(visited[end])
+    return "Impossible"
 
 def solve():
     arr = [True for _ in range(10000)]
@@ -33,7 +34,6 @@ def solve():
     N = int(input())
     for _ in range(N):
         a, b = map(int, input().split())
-        bfs(prime_li, a, b)
+        print(bfs(prime_li, a, b)-1)
 
 solve()
-
