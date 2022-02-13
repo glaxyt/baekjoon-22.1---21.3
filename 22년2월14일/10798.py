@@ -1,7 +1,7 @@
 # 10798번 세로읽기
 import sys
 input = sys.stdin.readline
-graph = [[False]*15 for i in range(5)]
+graph = [[False]*15 for _ in range(5)]
 
 for i in range(5):
     word = list(input().rstrip())
